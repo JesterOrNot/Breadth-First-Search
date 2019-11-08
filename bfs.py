@@ -1,10 +1,4 @@
 """BFS in Python."""
-GRAPH_2 = {'A': set(['B', 'C']),
-           'B': set(['A', 'D', 'E']),
-           'C': set(['A', 'F']),
-           'D': set(['B']),
-           'E': set(['B', 'F']),
-           'F': set(['C', 'E'])}
 
 GRAPH = {"A": set(["B", "C", "E", "F"]),
          "B": set(["A", "C", "D"]),
