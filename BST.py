@@ -22,12 +22,12 @@ def maze2graph(maze):
     for row, col in graph.keys():
         # Checks if its out of bounds
         if row < height - 1 and not maze[row + 1][col]:
-            graph[(row, col)].append((" S ", (row + 1, col)))
-            graph[(row + 1, col)].append((" N ", (row, col)))
+            graph[(row, col)].append((" DOWN ", (row + 1, col)))
+            graph[(row + 1, col)].append((" UP ", (row, col)))
         # Checks if its out of bounds
         if col < width - 1 and not maze[row][col + 1]:
-            graph[(row, col)].append((" E ", (row, col + 1)))
-            graph[(row, col + 1)].append((" W ", (row, col)))
+            graph[(row, col)].append((" RIGHT ", (row, col + 1)))
+            graph[(row, col + 1)].append((" LEFT ", (row, col)))
     return graph
 
 
@@ -96,8 +96,8 @@ def debug(maze):
     print("   --------------------------------------")
 
 
-# prettyPrint(maze)
-debug(maze)
+prettyPrint(maze)
+# debug(maze)
 print("Start at 10 by 10")
 # print(debugPath(maze, (10, 2), (6, 1)))
 print(find_path_bfs(maze, (10, 10), (6, 3)))
