@@ -1,3 +1,4 @@
+"""Solves maze using bfs."""
 from collections import deque
 
 maze = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -51,6 +52,7 @@ def debugPath(maze, start: tuple = (2, 1), goal: tuple = (len(maze) - 2, len(maz
     queue = deque([("", start)])  # Path, start node
     visited = set()
     graph = maze2graph(maze)
+    print(graph)
     while queue:
         path, current = queue.popleft()
         if current == goal:
@@ -96,9 +98,9 @@ def debug(maze):
     print("   --------------------------------------")
 
 
-prettyPrint(maze)
-# debug(maze)
+# prettyPrint(maze)
+debug(maze)
 print("Start at 10 by 10")
-# print(debugPath(maze, (10, 2), (6, 1)))
+print(debugPath(maze, (10, 2), (6, 1)))
 print(find_path_bfs(maze, (10, 10), (6, 3)))
 # print(find_path_bfs(maze, (1, 1)))
