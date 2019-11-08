@@ -20,9 +20,11 @@ def maze2graph(maze):
     graph = {(i, j): [] for j in range(width)
              for i in range(height) if not maze[i][j]}
     for row, col in graph.keys():
+        # Checks if its out of bounds
         if row < height - 1 and not maze[row + 1][col]:
             graph[(row, col)].append((" S ", (row + 1, col)))
             graph[(row + 1, col)].append((" N ", (row, col)))
+        # Checks if its out of bounds
         if col < width - 1 and not maze[row][col + 1]:
             graph[(row, col)].append((" E ", (row, col + 1)))
             graph[(row, col + 1)].append((" W ", (row, col)))
@@ -96,9 +98,7 @@ def debug(maze):
 
 # prettyPrint(maze)
 debug(maze)
-print("Start at 10 by 2")
+print("Start at 10 by 10")
 # print(debugPath(maze, (10, 2), (6, 1)))
-# print(maze[10][2], maze[2][10])
-# print(maze[11])
-print(find_path_bfs(maze, (10, 2), (6, 1)))
+print(find_path_bfs(maze, (10, 10), (6, 3)))
 # print(find_path_bfs(maze, (1, 1)))
