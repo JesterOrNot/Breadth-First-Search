@@ -71,9 +71,9 @@ def prettyPrint(maze):
         print("|", end="")
         for col in range(len(maze[0])):
             if maze[row][col] == 0:
-                print("    ", end="")
+                print("   ", end="")
             else:
-                print("####", end="")
+                print("###", end="")
         print("|", end="")
         print()
     print("--------------------------------------")
